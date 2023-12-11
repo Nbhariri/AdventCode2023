@@ -25,7 +25,7 @@ string  parttwo(string line){
            size_t val = digit[i].size() ; 
             cout << val << endl;
             line.replace(found, val, to_string(i + 1));
-            found = line.find(digit[i], found + 1);
+            found = line.find(digit[i]);
             
         }
         cout << line << endl;
