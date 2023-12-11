@@ -15,18 +15,18 @@ find the pos find ()
 string  parttwo(string line){
     
     string digit[] = { "one", "two", "three" , "four", "five" , "six" , "seven" , "eight" , "nine" };
-
-    bool rtnval = false;
     // Find first occurrence of 
     for (int i = 0; i < 9; i++) {
         size_t found = line.find(digit[i]);
-        if (found != string::npos) { //npos showing not found
+    //  if (found != string::npos) { //npos showing not found
+        while (found != string::npos) {
             cout << found << endl;
             cout << digit[i].length()<<endl; 
            size_t val = digit[i].size() ; 
             cout << val << endl;
             line.replace(found, val, to_string(i + 1));
-            rtnval = true;
+            found = line.find(digit[i], found + 1);
+            
         }
         cout << line << endl;
     }
@@ -48,8 +48,6 @@ int FirtDigit(string  line){
 
 
  firstDigit = digitvect[0] - '0';
-
-
    cout << "first digit :  " << firstDigit << endl;
    int last = digitvect.size();
    lastDigit = digitvect[last - 1] - '0';
