@@ -9,37 +9,37 @@
 using namespace std;
 
 /*
-input : each line in file 
+input : each line in file
 find the pos find ()
 */
-string  parttwo(string line){
-    
+string  parttwo(string line) {
+
     string digit[] = { "one", "two", "three" , "four", "five" , "six" , "seven" , "eight" , "nine" };
+
+    bool rtnval = false;
     // Find first occurrence of 
     for (int i = 0; i < 9; i++) {
         size_t found = line.find(digit[i]);
-    //  if (found != string::npos) { //npos showing not found
-        while (found != string::npos) {
+        if (found != string::npos) { //npos showing not found
             cout << found << endl;
-            cout << digit[i].length()<<endl; 
-           size_t val = digit[i].size() ; 
+            cout << digit[i].length() << endl;
+            size_t val = digit[i].size();
             cout << val << endl;
             line.replace(found, val, to_string(i + 1));
-            found = line.find(digit[i]);
-            
+            rtnval = true;
         }
         cout << line << endl;
     }
     return line;
 }
 
-int FirtDigit(string  line){
+int FirtDigit(string  line) {
     vector <  char > digitvect;
 
-    int firstDigit; 
+    int firstDigit;
     int lastDigit;
 
-    for ( char i :  line) {
+    for (char i : line) {
         if (isdigit(i))
         {
             digitvect.push_back(i);
@@ -47,17 +47,19 @@ int FirtDigit(string  line){
     }
 
 
- firstDigit = digitvect[0] - '0';
-   cout << "first digit :  " << firstDigit << endl;
-   int last = digitvect.size();
-   lastDigit = digitvect[last - 1] - '0';
-   cout << " last digit : " << lastDigit << endl; 
+    firstDigit = digitvect[0] - '0';
 
 
-   int result = firstDigit * 10 + lastDigit; 
-   cout << "this result " << result << endl;
+    cout << "first digit :  " << firstDigit << endl;
+    int last = digitvect.size();
+    lastDigit = digitvect[last - 1] - '0';
+    cout << " last digit : " << lastDigit << endl;
 
-   return result;
+
+    int result = firstDigit * 10 + lastDigit;
+    cout << "this result " << result << endl;
+
+    return result;
 
 }
 
@@ -105,17 +107,17 @@ void firstpart() {
 int main()
 {
 
- // string s = parttwo("4nineeightseven2");
- // cout << s << endl;
+    // string s = parttwo("4nineeightseven2");
+    // cout << s << endl;
 
-  //int k = FirtDigit(s);
-    //std::cout << "Hello World!\n";
+     //int k = FirtDigit(s);
+       //std::cout << "Hello World!\n";
     fstream myfile;
     string line;
-  //string s;
+    //string s;
     vector<int> resultvec;
-    int resultf= 0; 
-  
+    int resultf = 0;
+
     myfile.open("myfile.txt");
 
     while (getline(myfile, line)) {
@@ -129,5 +131,4 @@ int main()
 
     }
 }
-
 

@@ -1,3 +1,3 @@
 ﻿  adventCode.cpp
-C:\Users\nhariri\Desktop\adventCode\adventCode\adventCode.cpp(52,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\nhariri\Desktop\adventCode\adventCode\adventCode.cpp(54,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   adventCode.vcxproj -> C:\Users\nhariri\Desktop\adventCode\x64\Debug\adventCode.exe
